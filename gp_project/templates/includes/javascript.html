@@ -1,0 +1,62 @@
+{% load static %}
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap-4.1.3/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'vendor/cookie/jquery.cookie.js' %}"></script>
+
+
+    <script src="{% static 'vendor/sparklines/jquery.sparkline.min.js' %}"></script>
+
+
+    <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
+
+
+    <script src="{% static 'vendor/chartjs/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/chartjs/utils.js' %}"></script>
+
+
+    <script src="{% static 'vendor/footable-bootstrap/js/footable.min.js' %}"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+
+    <script src="{% static 'vendor/bootstrap-daterangepicker-master/moment.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap-daterangepicker-master/daterangepicker.js' %}"></script>
+
+
+    <script src="{% static 'vendor/bootstrap_tour/js/bootstrap-tour-standalone.min.js' %}"></script>
+
+
+    <script src="{% static 'vendor/jquery-toast-plugin-master/dist/jquery.toast.min.js' %}"></script>
+    <script type="text/javascript">
+            $('.sidebar .nav .nav-item .dropdwown-toggle').on('click', function () {
+        if ($(this).hasClass('active') != true) {
+            $('.sidebar .nav .nav-item .dropdwown-toggle').removeClass('active').next().slideUp();
+            $(this).addClass('active').next().slideDown();
+        } else {
+            $(this).removeClass('active').next().slideUp();
+        }
+            });
+
+            $(window).on('load', function () {
+    /* hide loader  */
+    $('.loader').hide();
+    $('.animatejack').addClass('jackInTheBox');
+});
+
+
+    function uyari(baslik, icerik, tip) {
+
+
+
+        $.toast({
+            heading: '' + baslik,
+            text: '' + icerik,
+            position: 'bottom-center',
+            stack: false,
+            hideAfter: 6000,
+            icon: '' + tip
+        });
+    }
+
+    </script>

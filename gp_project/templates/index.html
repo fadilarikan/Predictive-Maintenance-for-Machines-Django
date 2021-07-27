@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+      Home Page
+    {% endblock title %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid"></div>
+    <div class="container">
+        <br><br>
+        <h1 class="display-4"><center>Predictive Maintenance for Machines</center></h1>
+        <br><br>
+        <h3 class="display-5"><center>Enter the values you get from the sensors on the machine</center></h3>
+        <br><br>
+
+    </div>
+    <div class=container>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form}}
+    <br><br>
+    <br><br>
+    <div class="col-md-12 text-center">
+    <input type = "submit" class = "display-4 btn btn-success" value = "Predict machine breakdown" align="left">
+        <br><br>
+    {% if predict == 1 %}
+        <h1 class="display-4" style="color: red;"><center>{{ message }}</center></h1>
+    {% else %}
+        <h1 class="display-4"><center>{{ message }}</center></h1>
+        {% endif%}
+        <br><br>
+    </div>
+</form>
+    <table class="text-center" style="width:100%">
+  <tr>
+    <th>Keyword</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Vibration of y</td>
+    <td>Horizontal vibration value of the machine</td>
+  </tr>
+  <tr>
+    <td>Pressure 6h mean</td>
+    <td>Average of the 6 hour pressure measurements of the machine</td>
+  </tr>
+  <tr>
+    <td>Temperature 6h std</td>
+    <td>Standard deviation of the machine's 6-hour temperature values</td>
+  </tr>
+</table>
+
+  {% endblock content %}
